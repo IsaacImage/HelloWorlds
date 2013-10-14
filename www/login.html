@@ -67,7 +67,9 @@
 			
 			<div class="row-fluid">
 				<div class="well span5 center login-box">
-					<div class="alert alert-info">
+                <p  class="alert alert-info"  id="appInfo">Waiting for PhoneGap Initialization to
+			complete</p>
+					<div class="alert alert-info" >
 						Please login with your Username and Password.
 					</div>
 					<form class="form-horizontal" action="design/index.html" method="post">
@@ -97,6 +99,26 @@
 				</div><!--/fluid-row-->
 		
 	</div><!--/.fluid-container-->
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" charset="utf-8">
+            function onBodyLoad() {
+                document.addEventListener("deviceready", onDeviceReady,false);
+            }
+            function onDeviceReady() {
+                //Get the appInfo DOM element
+                var element = document.getElementById('appInfo');
+                //replace it with specific information about the device
+                //running the application
+                element.innerHTML = 'PhoneGap (version ' +
+                device.phonegap + ')<br />' + device.platform + ' ' +
+                device.name + ' (version ' + device.version + ').';
+            }
+        </script>
+
+
+
+
 
 	<!-- external javascript
 	================================================== -->
