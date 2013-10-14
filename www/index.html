@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<!--
-		Charisma v1.0.0
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
-		Copyright 2012 Muhammad Usman
-		Licensed under the Apache License v2.0
-		http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
-		http://usman.it
-		http://twitter.com/halalit_usman
-	-->
-	<meta charset="utf-8">
-	<title>Free HTML5 Bootstrap Admin Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-	<meta name="author" content="Muhammad Usman">
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+    
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-	<!-- The styles -->
-	<link  href="css/bootstrap-cerulean.css" rel="stylesheet">
-	<style type="text/css">
-	  body {
-		padding-bottom: 40px;
-	  }
-	  .sidebar-nav {
-		padding: 9px 0;
-	  }
-	</style>
+<link  href="css/bootstrap-cerulean.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/charisma-app.css" rel="stylesheet">
 	<link href="css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
@@ -43,19 +41,19 @@
 	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
 	<link href='css/opa-icons.css' rel='stylesheet'>
 	<link href='css/uploadify.css' rel='stylesheet'>
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- The fav icon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
-		
-</head>
-
-<body>
-		<div class="container-fluid">
+	<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+        <title>Hello World</title>
+    </head>
+    <body onload="onBodyLoad()">
+	
+<div class="container-fluid">
 		<div class="row-fluid">
 		
 			<div class="row-fluid">
@@ -67,7 +65,7 @@
 			
 			<div class="row-fluid">
 				<div class="well span5 center login-box">
-                <p  class="alert alert-info"  id="appInfo">Waiting for PhoneGap Initialization to
+                <p id="appInfo">Waiting for PhoneGap Initialization to
 			complete</p>
 					<div class="alert alert-info" >
 						Please login with your Username and Password.
@@ -98,7 +96,7 @@
 			</div><!--/row-->
 				</div><!--/fluid-row-->
 		
-	</div><!--/.fluid-container-->
+	</div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" charset="utf-8">
@@ -115,12 +113,7 @@
                 device.name + ' (version ' + device.version + ').';
             }
         </script>
-
-
-
-
-
-	<!-- external javascript
+<!-- external javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 
@@ -194,6 +187,6 @@
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
 	
-		
-</body>
+		        
+    </body>
 </html>
