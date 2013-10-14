@@ -1,22 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
     
@@ -51,7 +34,7 @@
 	</style>
         <title>Hello World</title>
     </head>
-    <body onload="onBodyLoad()" style="width:100%;">
+    <body onload="onBodyLoad()">
 	
 <div class="container-fluid">
 		<div class="row-fluid">
@@ -63,17 +46,15 @@
 				<!--/span-->
 			</div><!--/row-->
             
-            <p>This is a PhoneGap application that makes calls to
-			the PhoneGap APIs and uses the jQuery Mobile
-			framework.</p>
-			<p id="appInfo">Waiting for PhoneGap Initialization to
-			complete</p>
-			
-			<div class="span2 main-menu-span" style="width:95%; height:150px">
-				<div class="well nav-collapse sidebar-nav" style="width:95%; height:150px">
-					<ul class="nav nav-tabs nav-stacked main-menu" style="width:95%; height:150px">
+<p>Using the PhoneGap Camera API<br />
+<input type="button" value="Take a Picture"
+onclick="takePhoto();">
+</p>
+			<div class="span2 main-menu-span">
+				<div class="well nav-collapse sidebar-nav" >
+					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">COMMODITY PRICES</li>
-						<li><a class="ajax-link" href="camera.html"><i class="icon-home"></i><span class="hidden-tablet"> Camera</span></a></li>
+						<li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Fertilizer</span></a></li>
 						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Seeds</span></a></li>
 						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Perticide</span></a></li>
 					</ul>
@@ -83,28 +64,33 @@
 				</div><!--/fluid-row-->
 		
 	</div>
-<br>
-<br>
-
-	    <footer>
-        <p class="pull-left">&copy; <a href="http://agromis.mfarms.org" target="_blank">MIPAD</a> <?php echo date('Y') ?></p>
-        <p class="pull-right">Powered by: <a href="http:imagead.net">Image-Ad</a></p>
-    </footer>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" charset="utf-8">
             function onBodyLoad() {
                 document.addEventListener("deviceready", onDeviceReady,false);
+				navigator.camera.getPicture( onCameraSuccess, onCameraError, cameraOptions );
             }
+
+			function takePhoto() {
+			     navigator.camera.getPicture(onCameraSuccess, onCameraError);
+			}
+			
+			function onCameraSuccess(imageURL) {
+			     navigator.notification.alert("onCameraSuccess: " + imageURL);
+			}
+			
+			function  onCameraError(e) {
+				navigator.notification.alert("onCameraError: " + e);
+			}
+
+			
             function onDeviceReady() {
-                //Get the appInfo DOM element
-                var element = document.getElementById('appInfo');
-                //replace it with specific information about the device
-                //running the application
-                element.innerHTML = 'PhoneGap (version ' +
-                device.phonegap + ')<br />' + device.platform + ' ' +
-                device.name + ' (version ' + device.version + ').';
+				navigator.notification.alert("onDeviceReady");
             }
+			
+			
+			
         </script>
 <!-- external javascript
 	================================================== -->
@@ -180,6 +166,11 @@
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
     
-    		        
+    
+	    <footer>
+        <p class="pull-left">&copy; <a href="http://agromis.mfarms.org" target="_blank">MIPAD</a> <?php echo date('Y') ?></p>
+        <p class="pull-right">Powered by: <a href="http:imagead.net">Image-Ad</a></p>
+    </footer>
+		        
     </body>
 </html>
