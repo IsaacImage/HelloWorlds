@@ -51,69 +51,54 @@
 	</style>
         <title>Hello World</title>
     </head>
-    <body onload="onBodyLoad()">
+    <body onload="onBodyLoad()" style="width:100%;">
 	
-<h1>Example 10-1</h1>
-<p>This is a PhoneGap application that measures
-Device acceleration using the Accelerometer API.</p>
-<p><input type="button"
-value="Refresh Orientation" onclick="getAcceleration();">
-</p>
-<p id="accelInfo">Nothing to see here (yet),
-click the button.</p>
-
-
+<div class="container-fluid">
+		<div class="row-fluid">
+		
+			<div class="row-fluid">
+				<div class="span12 center login-header">
+					<h2>Welcome MIPAD</h2>
+				</div>
+				<!--/span-->
+			</div><!--/row-->
+            
+            <p>This is a PhoneGap application that makes calls to
+			the PhoneGap APIs and uses the jQuery Mobile
+			framework.</p>
+			<p id="appInfo">Waiting for PhoneGap Initialization to
+			complete</p>
+			
+			<div class="span2 main-menu-span" style="width:95%; height:auto">
+				<div class="well nav-collapse sidebar-nav" style="width:95%; height:auto">
+					<ul class="nav nav-tabs nav-stacked main-menu" style="width:95%; height:auto">
+						<li class="nav-header hidden-tablet">COMMODITY PRICES</li>
+						<li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+						<li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
+						<li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
+						<li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
+						<li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
+						<li class="nav-header hidden-tablet">Sample Section</li>
+						<li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
+						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
+						<li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
+						<li><a class="ajax-link" href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
+						<li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
+						<li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
+						<li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
+						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+					</ul>
+				  <label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>
+				</div><!--/.well -->
+			</div><!--/row-->
+				</div><!--/fluid-row-->
+		
+	</div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" charset="utf-8">
-		
-		
-		//Accelerometer content
-var ac;
-//PhoneGap Ready variable
-var pgr = false;
-function onBodyLoad() {
-document.addEventListener("deviceready", onDeviceReady,
-false);
-}
-function onDeviceReady() {
-//Get a handle we'll use to adjust the accelerometer
-//content
-ac = document.getElementById('accelInfo');
-//Set the variable that lets other parts of the program
-//know that PhoneGap is initialized
-pgr = true;
-}
-function getAcceleration() {
-if (pgr == true) {
-//Clear the current orientation
-ac.innerHTML = "";
-//get the current orientation
-navigator.accelerometer.getCurrentAcceleration(
-onAccelSuccess, onAccelFailure);
-} else {
-alert("Please wait,\nPhoneGap is not ready.");
-}
-}
-function onAccelSuccess(accel) {
-//We received something from the API, so...
-//first get the timestamp in a date object
-//so we can work with it
-var d = new Date(accel.timestamp);
-//Then replace the page's content with the
-//current acceleration retrieved from the API
-ac.innerHTML = "<b>Current acceleration</b><hr />X: " +
-accel.x + "<br />Y: " + accel.y + "<br />Z: " +
-accel.z + "<br />Timestamp: " + d.toLocaleString() +
-"<hr />Click the button to refresh.";
-}
-function onAccelFailure() {
-alert("Accelerometer error!");
-}
-
-		
-		
-/*            function onBodyLoad() {
+            function onBodyLoad() {
                 document.addEventListener("deviceready", onDeviceReady,false);
             }
             function onDeviceReady() {
@@ -124,7 +109,7 @@ alert("Accelerometer error!");
                 element.innerHTML = 'PhoneGap (version ' +
                 device.phonegap + ')<br />' + device.platform + ' ' +
                 device.name + ' (version ' + device.version + ').';
-            }*/
+            }
         </script>
 <!-- external javascript
 	================================================== -->
@@ -199,7 +184,12 @@ alert("Accelerometer error!");
 	<script src="js/jquery.history.js"></script>
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
-	
+    
+    
+	    <footer>
+        <p class="pull-left">&copy; <a href="http://agromis.mfarms.org" target="_blank">MIPAD</a> <?php echo date('Y') ?></p>
+        <p class="pull-right">Powered by: <a href="http:imagead.net">Image-Ad</a></p>
+    </footer>
 		        
     </body>
 </html>
